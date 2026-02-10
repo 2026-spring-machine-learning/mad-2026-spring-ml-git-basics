@@ -13,8 +13,8 @@ def pick_the_winners(raffle_tickets, raffle_names):
     # The names should stay coordinated with the ticket numbers. Take out the following two lines
     # and shuffle the indices instead. Please complete. I have to run on a business trip now. Sorry
     # to leave you hanging.
-    randomizer.shuffle(raffle_tickets)
-    randomizer.shuffle(raffle_names)
+    raffle_tickets = raffle_tickets[indices]
+    raffle_names = raffle_names[indices]
     eliminated_tickets = raffle_tickets[:bottom_80_percent]
     eliminated_names = raffle_names[:bottom_80_percent]
     keychain_winner_numbers = raffle_tickets[-top_20_percent:]
