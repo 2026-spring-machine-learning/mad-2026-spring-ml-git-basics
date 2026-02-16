@@ -12,7 +12,6 @@ def pick_the_winners(raffle_tickets, raffle_names):
     # Blanca here: The following will randomize the order of the tickets and names separately.
     # The names should stay coordinated with the ticket numbers. Take out the following two lines
     # and shuffle the indices instead. Please complete. I have to run on a business trip now. Sorry
-    # to leave you hanging.
     raffle_tickets = raffle_tickets[indices]
     raffle_names = raffle_names[indices]
     eliminated_tickets = raffle_tickets[:bottom_80_percent]
