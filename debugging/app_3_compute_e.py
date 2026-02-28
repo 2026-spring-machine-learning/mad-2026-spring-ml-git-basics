@@ -1,8 +1,14 @@
 def sum_one_to_million():
     """Manually add up numbers from 1 to 1,000,000."""
+    ##take the initialization out of the loop
+    
+    total = 0 # Initialize total.
+
     for num_counter in range(1, 1000001):
-        total = 0 # Initialize total.
+
         total += num_counter
+    return total
+
 
 
 def compute_e(precision=10):
@@ -28,7 +34,8 @@ def compute_e(precision=10):
     threshold = 10 ** (-(precision + 5))
 
     e = 1.0  # Start with 1/0! = 1
-    factorial = 0
+    ##fatorial was starting at 0 which causes DivisonZero. Need to start at 1
+    factorial = 1
     n = 1
     while True:
         factorial *= n  # Compute n! incrementally. The factorials AFTER THE FIRST FACTORIAL are 1,
@@ -37,10 +44,12 @@ def compute_e(precision=10):
 
         if term < threshold:
             break
-
+        ##missing the e accumulation. 
+        e += term    
         n += 1
 
-    return e
+    ##need to return both e and N to avoid TypeError for two objects
+    return e, n
 
 
 def main():
@@ -56,3 +65,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
