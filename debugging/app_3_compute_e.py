@@ -1,8 +1,9 @@
 def sum_one_to_million():
     """Manually add up numbers from 1 to 1,000,000."""
+    total = 0
     for num_counter in range(1, 1000001):
-        total = 0 # Initialize total.
         total += num_counter
+    return total
 
 
 def compute_e(precision=10):
@@ -28,7 +29,7 @@ def compute_e(precision=10):
     threshold = 10 ** (-(precision + 5))
 
     e = 1.0  # Start with 1/0! = 1
-    factorial = 0
+    factorial = 1
     n = 1
     while True:
         factorial *= n  # Compute n! incrementally. The factorials AFTER THE FIRST FACTORIAL are 1,
@@ -38,9 +39,10 @@ def compute_e(precision=10):
         if term < threshold:
             break
 
+        e += term
         n += 1
 
-    return e
+    return e,n
 
 
 def main():
