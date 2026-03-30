@@ -9,8 +9,8 @@ def eat_and_open(dinner_and_gifts):
             dinner_and_gifts[1].append("racquet")
             dinner_and_gifts[1].append("tennis balls")
             dinner_and_gifts[1].append("sweatband")
-    
-        return dinner_and_gifts
+
+    return dinner_and_gifts
 
 
 def main():

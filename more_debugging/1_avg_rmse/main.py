@@ -63,8 +63,8 @@ def main():
     shuffled = data[:]
     rnd.shuffle(shuffled)
     folds = [shuffled[i:i + test_size] for i in range(0, len(shuffled), test_size)]
+    rmse_values = []
     for cross_validation_counter, test in enumerate(folds, start=1):
-        rmse_values = []
         train = [p for p in shuffled if p not in test]
         slope, intercept = fit_ols_line(train)
         print(f"--- Cross Validation Iteration {cross_validation_counter} ---")
@@ -79,7 +79,7 @@ def main():
         print(f"\nRoot Mean Squared Error (RMSE) on test set: {rmse:.6f}\n")
         rmse_values.append(rmse)
 
-    avg_rmse = ???
+    avg_rmse = sum(rmse_values) / len(rmse_values)
     print(f"=== Average RMSE across {len(rmse_values)} folds: {avg_rmse:.6f} ===")
 
 
