@@ -1,5 +1,5 @@
 def make_breakfast(course_number, breakfast_in_bed):
-    breakfast_in_bed = [[], [], []]
+
     if course_number == 0:
         breakfast_in_bed[course_number] = ["eggs", "pancakes"]
     elif course_number == 1:
@@ -11,7 +11,8 @@ def make_breakfast(course_number, breakfast_in_bed):
 
 
 def main():
-    breakfast_in_bed = None
+    #Same as first debugging, because of the for loop, breakfast_in_bed was getting reset. You need to bring it outside of the for loop.
+    breakfast_in_bed = [[], [], []]
     for meal_course_counter in range(3):
         breakfast_in_bed = make_breakfast(meal_course_counter, breakfast_in_bed)
 
