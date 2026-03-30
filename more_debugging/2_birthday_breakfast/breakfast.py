@@ -1,5 +1,6 @@
 def make_breakfast(course_number, breakfast_in_bed):
-    breakfast_in_bed = [[], [], []]
+    if breakfast_in_bed is None:
+        breakfast_in_bed = [[], [], []]
     if course_number == 0:
         breakfast_in_bed[course_number] = ["eggs", "pancakes"]
     elif course_number == 1:
